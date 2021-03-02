@@ -25,7 +25,10 @@ export default {
   plugins: [
     peerDepsExternal(),
     resolve(),
-    replace({ 'process.env.NODE_ENV': JSON.stringify(env) }),
+    replace({
+      values: { 'process.env.NODE_ENV': JSON.stringify(env) },
+      preventAssignment: true,
+    }),
     commonjs(),
     typescript({
       declaration: true,

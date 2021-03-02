@@ -15,16 +15,19 @@ steps:
       versionSpec: '14.x'
     displayName: 'Install Node.js 14'
 
-  - script: |
-      npm install --progress=false --loglevel=error --no-fund
-      npm run build:prod
+  - task: PowerShell@2
+    inputs:
+      targetType: 'inline'
+      script: |
+        npm install --progress=false --loglevel=error --no-fund
+        npm run build:prod
     displayName: 'npm install and build'
 
   - task: CopyFiles@2
     inputs:
       SourceFolder: '$(Build.SourcesDirectory)'
       Contents: |
-        dist/**
+        build/**
         LICENSE 
         package.json
         README.md
