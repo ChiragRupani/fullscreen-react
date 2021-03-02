@@ -7,7 +7,7 @@
   "module": "build/index.esm.js",
   "scripts": {
     "build": "tsc --emitDeclarationOnly && rollup -c",
-    "build:prod": "SET NODE_ENV=production && tsc --emitDeclarationOnly && rollup -c"
+    "build:prod": "set NODE_ENV=production && tsc --emitDeclarationOnly && rollup -c"
   },
   "files": [
     "build"
