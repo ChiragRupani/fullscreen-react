@@ -1,9 +1,12 @@
 export default class FSUtility {
-  public static readonly fullscreenElement: Element =
-    document.fullscreenElement ||
-    document['msFullscreenElement'] ||
-    document['webkitFullscreenElement'] ||
-    document['mozFullScreenElement'];
+  public static get fullscreenElement(): Element {
+    return (
+      document.fullscreenElement ||
+      document['msFullscreenElement'] ||
+      document['webkitFullscreenElement'] ||
+      document['mozFullScreenElement']
+    );
+  }
 
   public static readonly fullscreenchange: string | null =
     (document.onfullscreenchange !== undefined ? 'fullscreenchange' : null) ||
@@ -17,19 +20,18 @@ export default class FSUtility {
       ? 'mozfullscreenchange'
       : null);
 
-  public static readonly fullscreenEnabled: boolean =
-    document.fullscreenEnabled ||
-    document['msFullscreenEnabled'] ||
-    document['webkitFullscreenEnabled'] ||
-    document['mozFullScreenEnabled'];
+  public static get fullscreenEnabled(): boolean {
+    return (
+      document.fullscreenEnabled ||
+      document['msFullscreenEnabled'] ||
+      document['webkitFullscreenEnabled'] ||
+      document['mozFullScreenEnabled']
+    );
+  }
 
   public static readonly requestFullscreen: (
-    element: Element | null,
-    options?: FullscreenOptions
-  ) => Promise<void> = (
-    element: Element | null,
-    options?: FullscreenOptions
-  ) => {
+    element: Element | null
+  ) => Promise<void> = (element: Element | null) => {
     if (!element) {
       return;
     }
@@ -39,27 +41,33 @@ export default class FSUtility {
     }
 
     if (element['msRequestFullscreen']) {
-      return element['msRequestFullscreen'](options);
+      return element['msRequestFullscreen']();
     }
 
     if (element['webkitRequestFullscreen']) {
-      return element['webkitRequestFullscreen'](options);
+      return element['webkitRequestFullscreen']();
     }
 
     if (element['mozRequestFullScreen']) {
-      return element['mozRequestFullScreen'](options);
+      return element['mozRequestFullScreen']();
     }
-
-    return;
   };
 
-  public static readonly exitFullscreen: () => Promise<any> = () =>
-    (document.exitFullscreen ? document.exitFullscreen() : null) ||
-    (document['msExitFullscreen'] ? document['msExitFullscreen']() : null) ||
-    (document['webkitExitFullscreen']
-      ? document['webkitExitFullscreen']()
-      : null) ||
-    (document['mozCancelFullScreen']
-      ? document['mozCancelFullScreen']()
-      : null);
+  public static readonly exitFullscreen: () => Promise<void> = () => {
+    if (document.exitFullscreen) {
+      return document.exitFullscreen();
+    }
+
+    if (document['webkitExitFullscreen']) {
+      return document['webkitExitFullscreen']();
+    }
+
+    if (document['msExitFullscreen']) {
+      return document['msExitFullscreen']();
+    }
+
+    if (document['mozCancelFullScreen']) {
+      return document['mozCancelFullScreen']();
+    }
+  };
 }

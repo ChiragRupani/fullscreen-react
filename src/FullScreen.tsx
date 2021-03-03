@@ -34,10 +34,10 @@ export default class FullScreen extends React.PureComponent<
     }
   }
 
-  async componentDidUpdate(prevProps) {
+  async componentDidUpdate(prevProps: { isFullScreen: boolean }) {
     if (
       !FSUtility.fullscreenEnabled ||
-      prevProps.enabled === this.props.isFullScreen
+      prevProps.isFullScreen === this.props.isFullScreen
     ) {
       return;
     }
