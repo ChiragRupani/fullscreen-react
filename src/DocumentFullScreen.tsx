@@ -1,16 +1,15 @@
 import * as React from 'react';
 import FSUtility from './FSUtility';
+import './FullScreen.css';
+import FullScreenPropType from './FullScreenPropType';
 
-export default class BodyFullScreen extends React.PureComponent<
-  {
-    onChange: (isFullScreenEnabled: boolean) => void;
-    isFullScreen: boolean;
-  },
+export default class DocumentFullScreen extends React.PureComponent<
+  FullScreenPropType,
   {}
 > {
-  private bodyElement = document.querySelector('body');
+  private docElement = FSUtility.documentElement;
 
-  constructor(props) {
+  constructor(props: FullScreenPropType) {
     super(props);
     this.onFullScreenChange = this.onFullScreenChange.bind(this);
   }
@@ -33,9 +32,9 @@ export default class BodyFullScreen extends React.PureComponent<
     }
   }
 
-  async componentDidUpdate(prevProps: { isFullScreen: boolean }) {
+  async componentDidUpdate(prevProps: FullScreenPropType) {
     if (
-      !this.bodyElement ||
+      !this.docElement ||
       !FSUtility.fullscreenEnabled ||
       prevProps.isFullScreen === this.props.isFullScreen
     ) {
@@ -43,19 +42,17 @@ export default class BodyFullScreen extends React.PureComponent<
     }
 
     let isFullScreenEnabled: boolean =
-      FSUtility.fullscreenElement === this.bodyElement;
+      FSUtility.fullscreenElement === this.docElement;
 
     if (this.props.isFullScreen && !isFullScreenEnabled) {
-      await FSUtility.requestFullscreen(this.bodyElement);
-      this.bodyElement.style.overflow = 'auto';
+      await FSUtility.requestFullscreen(this.docElement);
     } else if (isFullScreenEnabled && !this.props.isFullScreen) {
       await FSUtility.exitFullscreen();
-      this.bodyElement.style.overflow = 'initial';
     }
   }
 
   onFullScreenChange() {
-    let currentState = FSUtility.fullscreenElement === this.bodyElement;
+    let currentState = FSUtility.fullscreenElement === this.docElement;
     let stateChanged = currentState !== this.props.isFullScreen;
 
     if (stateChanged) {

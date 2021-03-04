@@ -1,16 +1,14 @@
 import * as React from 'react';
 import FSUtility from './FSUtility';
+import FullScreenPropType from './FullScreenPropType';
 
 export default class FullScreen extends React.PureComponent<
-  {
-    onChange: (isFullScreenEnabled: boolean) => void;
-    isFullScreen: boolean;
-  },
+  FullScreenPropType,
   {}
 > {
   private currentElement: React.RefObject<HTMLDivElement>;
 
-  constructor(props) {
+  constructor(props: FullScreenPropType) {
     super(props);
     this.currentElement = React.createRef();
     this.onFullScreenChange = this.onFullScreenChange.bind(this);
@@ -34,7 +32,7 @@ export default class FullScreen extends React.PureComponent<
     }
   }
 
-  async componentDidUpdate(prevProps: { isFullScreen: boolean }) {
+  async componentDidUpdate(prevProps: FullScreenPropType) {
     if (
       !FSUtility.fullscreenEnabled ||
       prevProps.isFullScreen === this.props.isFullScreen

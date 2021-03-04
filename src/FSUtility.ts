@@ -1,4 +1,12 @@
 export default class FSUtility {
+  public static get documentElement(): HTMLElement {
+    return document.fullscreenElement !== undefined
+      ? document.documentElement
+      : document['msFullscreenElement'] !== undefined
+      ? document.body
+      : document.documentElement;
+  }
+
   public static get fullscreenElement(): Element {
     return (
       document.fullscreenElement ||

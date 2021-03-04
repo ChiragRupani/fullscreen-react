@@ -56,15 +56,15 @@ export default function FSExampleHook() {
 }
 ```
 
-If you require entire body document in fullscreen instead of any specific element use `BodyFullScreen` instead of `FullScreen` like below. However, there can be atmost one BodyFullScreen:
+If you require entire document in fullscreen instead of any specific element use `DocumentFullScreen` instead of `FullScreen` like below. However, there can be atmost one DocumentFullScreen:
 
 ```tsx
-<BodyFullScreen
+<DocumentFullScreen
   isFullScreen={this.state.isFullScreen}
   onChange={(isFullScreen) => {
     this.setState({ isFullScreen });
   }}
 >
   <div>Fullscreen</div>
-</BodyFullScreen>
+</DocumentFullScreen>
 ```

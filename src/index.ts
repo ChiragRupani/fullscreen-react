@@ -1,4 +1,4 @@
-import BodyFullScreen from './BodyFullScreen';
+import DocumentFullScreen from './DocumentFullScreen';
 import FullScreen from './FullScreen';
 
-export { FullScreen, BodyFullScreen };
+export { FullScreen, DocumentFullScreen };
