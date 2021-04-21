@@ -1,6 +1,6 @@
 {
   "name": "@chiragrupani/fullscreen-react",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Library to use full screen in ReactJS",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -27,24 +27,24 @@
   "author": "Chirag",
   "license": "MIT",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^17.1.0",
-    "@rollup/plugin-node-resolve": "^11.2.0",
-    "@rollup/plugin-replace": "^2.4.1",
-    "@rollup/plugin-typescript": "^8.2.0",
-    "@types/react": "^17.0.2",
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@rollup/plugin-replace": "^2.4.2",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "@types/react": "^17.0.3",
     "node-sass": "^5.0.0",
-    "postcss": "^8.2.6",
+    "postcss": "^8.2.10",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "rollup": "^2.40.0",
+    "rollup": "^2.45.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2",
-    "tslib": "^2.1.0",
-    "typescript": "^4.2.2"
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
   },
   "peerDependencies": {
-    "react": "^16.8",
-    "react-dom": "^16.8"
+    "react": "^17.0",
+    "react-dom": "^17.0"
   }
 }
