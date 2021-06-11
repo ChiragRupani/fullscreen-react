@@ -1,6 +1,6 @@
 import * as React from 'react';
 import FSUtility from './FSUtility';
-import './FullScreen.css';
+// import './FullScreen.css';
 import FullScreenPropType from './FullScreenPropType';
 
 export default class DocumentFullScreen extends React.PureComponent<
