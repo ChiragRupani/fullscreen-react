@@ -32,7 +32,8 @@ export default {
     commonjs(),
     typescript({
       declaration: true,
-      declarationDir: 'build',
+      declarationDir: ".",     
+      tsconfig: './tsconfig.json'
     }),
     // postcss(),
     // terser({
