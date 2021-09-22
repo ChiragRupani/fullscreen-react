@@ -44,7 +44,11 @@ export default class FullScreen extends React.PureComponent<
       FSUtility.fullscreenElement === this.currentElement.current;
 
     if (this.props.isFullScreen && !isFullScreenEnabled) {
-      await FSUtility.requestFullscreen(this.currentElement.current);
+      try {
+        await FSUtility.requestFullscreen(this.currentElement.current);
+      } catch (error) {
+        console.log(error);
+      }
     } else if (isFullScreenEnabled && !this.props.isFullScreen) {
       await FSUtility.exitFullscreen();
     }
