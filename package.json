@@ -1,6 +1,6 @@
 {
   "name": "@chiragrupani/fullscreen-react",
-  "version": "1.2.1",
+  "version": "1.2.5",
   "description": "Library to use full screen in ReactJS",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -33,14 +33,14 @@
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-replace": "^4.0.0",
     "@rollup/plugin-typescript": "^8.4.0",
-    "@types/react": "^18.0.17",
+    "@types/react": "^18.0.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^2.78.1",
+    "rollup": "^2.79.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-terser": "^7.0.2",
     "tslib": "^2.4.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.8.2"
   },
   "peerDependencies": {
     "react": ">=17.0",
