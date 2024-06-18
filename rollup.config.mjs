@@ -1,6 +1,7 @@
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
+// import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 import { readFileSync } from "node:fs";
 import { defineConfig } from "rollup";
@@ -53,7 +54,7 @@ export default defineConfig({
     // postcss(),
     // terser({
     //   format: {
-    //     comments: 'all',
+    //     comments: "all",
     //   },
     // }),
   ],
