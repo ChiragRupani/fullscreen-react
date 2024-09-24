@@ -47,8 +47,8 @@ export default defineConfig({
     }),
     commonjs(),
     typescript({
-      declaration: true,
-      declarationDir: ".",
+      // declaration: true,
+      // declarationDir: ".",
       tsconfig: "./tsconfig.json",
     }),
     // postcss(),
