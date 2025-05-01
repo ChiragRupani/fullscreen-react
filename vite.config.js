@@ -1,0 +1,28 @@
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import { defineConfig } from "vite";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+export default defineConfig({
+  experimental: { enableNativePlugin: true },
+  build: {
+    lib: {
+      entry: ["src/index.ts"],
+      name: "@chiragrupani/fullscreen-react",
+      formats: ["es", "cjs"],
+      fileName: (format) => `index.${format}.js`,
+    },
+    rollupOptions: {
+      external: ["react", "react-dom", "react/jsx-runtime"],
+      output: {
+        dir: "build",
+        globals: {
+          react: "react",
+          "react-dom": "react-dom",
+        },
+      },
+    },
+    sourcemap: true,
+  },
+});

@@ -12,7 +12,8 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "strict": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "checkJs": true
   },
   "include": ["src/**/*"],
   "exclude": [
