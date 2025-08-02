@@ -21,6 +21,9 @@ export default defineConfig({
           react: "react",
           "react-dom": "react-dom",
         },
+        advancedChunks: {
+          groups: [{ name: "vendor", test: /react(?:-dom)/ }],
+        },
       },
     },
     sourcemap: true,
