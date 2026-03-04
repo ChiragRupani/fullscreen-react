@@ -2,41 +2,41 @@
   "name": "@chiragrupani/fullscreen-react",
   "version": "1.4.0",
   "description": "Library to use full screen in ReactJS",
+  "keywords": [
+    "full screen",
+    "fullscreen react",
+    "fullscreen reactjs",
+    "react fullscreen"
+  ],
+  "license": "MIT",
+  "author": "Chirag",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ChiragRupani/fullscreen-react.git"
+  },
+  "files": [
+    "build"
+  ],
   "main": "build/index.cjs.js",
-  "types": "build/index.d.ts",
   "module": "build/index.es.js",
+  "types": "build/index.d.ts",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "vite build",
     "declaration": "tsc",
     "build:prod": "set NODE_ENV=production && npm run build",
     "postbuild": "npm run declaration"
   },
-  "files": [
-    "build"
-  ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/ChiragRupani/fullscreen-react.git"
-  },
-  "keywords": [
-    "fullscreen react",
-    "full screen",
-    "react fullscreen",
-    "fullscreen reactjs",
-    "react fullscreen"
-  ],
-  "author": "Chirag",
-  "license": "MIT",
   "devDependencies": {
     "@types/react": "^18.3.26",
     "@types/react-dom": "^18.3.7",
+    "@typescript/native-preview": "^7.0.0-dev.20260303.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "typescript": "^5.9.3",
-    "vite": "npm:rolldown-vite@^7.1.19"
+    "vite": "^8.0.0-beta.16"
   },
   "peerDependencies": {
     "react": ">=17.0",

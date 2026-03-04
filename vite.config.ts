@@ -17,7 +17,7 @@ export default defineConfig({
           react: "react",
           "react-dom": "react-dom",
         },
-        advancedChunks: {
+        codeSplitting: {
           groups: [{ name: "vendor", test: /react(?:-dom)/ }],
         },
       },
