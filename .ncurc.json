@@ -1,5 +1,5 @@
 {
   "target": "latest",
   "upgrade": false,
-  "reject": ["react", "react-dom", "@types/react", "@types/react-dom"]
+  "reject": ["react", "react-dom", "@types/react", "@types/react-dom", "typescript"]
 }
